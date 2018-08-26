@@ -2,20 +2,16 @@
 # -*- coding: utf-8 -*-
 import os
 def inicio():
-    if os.name == "posix":
-        clear()
-        print('Estou num POSIX')
-    elif os.name in ("nt", "dos", "ce"):
-        clear()
-        print('Estou num win')
-    else:
-        print('Não estou num unix nem num win')
+    clear()
+    print(os.name)
 
 def clear():
     if os.name == "posix":
         os.system('clear')
     elif os.name in ("nt", "dos", "ce"):
         os.system('cls')
+    else:
+        print('Não estou num win nem num unix')
 
 
 def start():
