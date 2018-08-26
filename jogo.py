@@ -10,6 +10,8 @@ def clear():
         os.system('clear')
     elif os.name in ("nt", "dos", "ce"):
         os.system('cls')
+    else:
+        print('Não estou num win nem num unix')
 
 
 def start():
