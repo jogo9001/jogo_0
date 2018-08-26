@@ -31,6 +31,10 @@ def config(n_cidades,prob_ataque,max_dist):
         print("novo valor:",n_cidades)
     except:
         pass
+    
+    if int(tmp) > 100 or int(tmp) <= 0:
+        print('O intervalo válido é somente entre 1 e 100')
+        config(n_cidades,prob_ataque,max_dist)
 
     tmp=input("probabilidade de ataques (Atual "+str(prob_ataque)+") :"  )
     try: 
@@ -40,6 +44,10 @@ def config(n_cidades,prob_ataque,max_dist):
     except:
         pass
 
+    if float(tmp)> 1.0 or float(tmp) <= 0.00:
+        print('O intervalo válido é somente entre 0.01 e 1.00')
+        config(n_cidades,prob_ataque,max_dist)
+
     tmp=input("distancia maxima entre cidades (Atual "+str(max_dist)+") :"  )
     try:
         float(max_dist)
@@ -48,6 +56,10 @@ def config(n_cidades,prob_ataque,max_dist):
     except:
         pass
     return n_cidades,prob_ataque,max_dist
+
+    if float(tmp) > 100 or float(tmp) <= 0:
+        print('O intervalo válido é somente entre 1 e 100')
+        config(n_cidades,prob_ataque,max_dist)
 
 def sair():
     print("saindo...")
