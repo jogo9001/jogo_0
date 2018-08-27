@@ -27,39 +27,43 @@ def config(n_cidades,prob_ataque,max_dist):
     tmp=input("numero de cidades (Atual "+str(n_cidades)+") :"  )
     try:    
         int(tmp)
-        n_cidades = int(tmp)   # <---- correcao do outro bug antes era "tmp" string; agora int(tmp) int
-        print("novo valor:",n_cidades)
     except:
         print("Impossivel converter o valor digitado para um int\nPermanece o valor anterior: ",n_cidades,"\n\n")
-    
-    if n_cidades > 100 or n_cidades <= 0:
-        print('O intervalo válido é somente entre 1 e 100')
-        #config(n_cidades,prob_ataque,max_dist) <------ e melhor simplesmente ir pra proxima variavel nao e necessario ficar reiniciando toda vez.  
+        tmp = None
 
+    if tmp:
+        if int(tmp) > 100 or int(tmp) <= 0:
+            print('O intervalo válido é somente entre 1 e 100\n\n')
+        else:
+            n_cidades = int(tmp)   # <---- correcao do outro bug antes era "tmp" string; agora int(tmp) int
+            print("novo valor:",n_cidades)
+   
     tmp=input("probabilidade de ataques (Atual "+str(prob_ataque)+") :"  )
     try: 
-        float(prob_ataque)
-        prob_ataque = tmp
-        print("novo valor",prob_ataque)
+        float(tmp)
     except:
-        print('Impossível converter o valor digitado para um int\nPermanece o valor anterior: ', prob_ataque,'\n\n')
-
-    if float(prob_ataque)> 1.0 or float(prob_ataque) <= 0.00:
-        print('O intervalo válido é somente entre 0.01 e 1.00')
-        #config(n_cidades,prob_ataque,max_dist)
+        print('Impossível converter o valor digitado para um float\nPermanece o valor anterior: ', prob_ataque,'\n\n')
+        tmp = None
+    if tmp:
+        if float(tmp)> 1.0 or float(tmp) <= 0.00:
+            print('O intervalo válido é somente entre 0.01 e 1.00\n\n')
+        else:
+            prob_ataque = float(tmp)
+            print("novo valor",prob_ataque)
 
     tmp=input("distancia maxima entre cidades (Atual "+str(max_dist)+") :"  )
     try:
-        float(max_dist)
-        max_dist = tmp
-        print("novo valor", max_dist)
+        float(tmp)
     except:
-        print('Impossível converter o valor digitado para um int\nPermanece o valor anterior: ', max_dist,'\n\n')
+        print('Impossível converter o valor digitado para um float\nPermanece o valor anterior: ', max_dist,'\n\n')
+        tmp = None
+    if tmp:
+        if float(tmp) > 100 or float(tmp) <= 0:
+            print('O intervalo válido é somente entre 1 e 100\n\n')
+        else:
+            max_dist = float(tmp)
+            print("novo valor", max_dist)
     return n_cidades,prob_ataque,max_dist
-
-    if float(max_dist) > 100 or float(max_dist) <= 0:
-        print('O intervalo válido é somente entre 1 e 100')
-        #config(n_cidades,prob_ataque,max_dist)
 
 def sair():
     print("saindo...")
