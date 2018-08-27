@@ -27,14 +27,14 @@ def config(n_cidades,prob_ataque,max_dist):
     tmp=input("numero de cidades (Atual "+str(n_cidades)+") :"  )
     try:    
         int(tmp)
-        n_cidades = tmp
+        n_cidades = int(tmp)   # <---- correcao do outro bug antes era "tmp" string; agora int(tmp) int
         print("novo valor:",n_cidades)
     except:
-        pass
+        print("Impossivel converter o valor digitado para um int\nPermanece o valor anterior: ",n_cidades,"\n\n")
     
-    if int(tmp) > 100 or int(tmp) <= 0:
+    if n_cidades > 100 or n_cidades <= 0:
         print('O intervalo válido é somente entre 1 e 100')
-        config(n_cidades,prob_ataque,max_dist)
+        #config(n_cidades,prob_ataque,max_dist) <------ e melhor simplesmente ir pra proxima variavel nao e necessario ficar reiniciando toda vez.  
 
     tmp=input("probabilidade de ataques (Atual "+str(prob_ataque)+") :"  )
     try: 
