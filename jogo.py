@@ -42,11 +42,11 @@ def config(n_cidades,prob_ataque,max_dist):
         prob_ataque = tmp
         print("novo valor",prob_ataque)
     except:
-        pass
+        print('Impossível converter o valor digitado para um int\nPermanece o valor anterior: ', prob_ataque,'\n\n')
 
-    if float(tmp)> 1.0 or float(tmp) <= 0.00:
+    if float(prob_ataque)> 1.0 or float(prob_ataque) <= 0.00:
         print('O intervalo válido é somente entre 0.01 e 1.00')
-        config(n_cidades,prob_ataque,max_dist)
+        #config(n_cidades,prob_ataque,max_dist)
 
     tmp=input("distancia maxima entre cidades (Atual "+str(max_dist)+") :"  )
     try:
@@ -54,12 +54,12 @@ def config(n_cidades,prob_ataque,max_dist):
         max_dist = tmp
         print("novo valor", max_dist)
     except:
-        pass
+        print('Impossível converter o valor digitado para um int\nPermanece o valor anterior: ', max_dist,'\n\n')
     return n_cidades,prob_ataque,max_dist
 
-    if float(tmp) > 100 or float(tmp) <= 0:
+    if float(max_dist) > 100 or float(max_dist) <= 0:
         print('O intervalo válido é somente entre 1 e 100')
-        config(n_cidades,prob_ataque,max_dist)
+        #config(n_cidades,prob_ataque,max_dist)
 
 def sair():
     print("saindo...")
