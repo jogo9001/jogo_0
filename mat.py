@@ -20,7 +20,7 @@ def calc_dist(px1, py1, px2, py2):
     calc2 = (py1-py2)*(py1-py2)
     calc3 = calc1 + calc2
     calc4 = raiz_quadrada(calc3)
-    return float(calc4)
+    return calc4
 
 if __name__ == "__main__":
     calc_dist(3,1,5,2)
